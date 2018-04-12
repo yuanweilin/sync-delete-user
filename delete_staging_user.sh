@@ -1,7 +1,16 @@
 echo; echo "====Will start deleting user===="; echo
 
-echo; echo "please enter user email:"; echo
-read -p "Please input email: " email
+function confirm_email_format(){
+  echo; echo "====please enter user email===="; echo
+  read -p "Please input email: " email
+  if [ `echo $email |grep "^[a-zA-Z0-9_-]*@[A-Za-z_-]*\.[a-zA-Z_-]*$"` ];then
+      echo $email >> result.txt
+  else
+    confirm_email_format
+  fi
+}
+
+confirm_email_format
 
 echo; echo "please enter user login:"; echo
 read -p "Please input login: " login
