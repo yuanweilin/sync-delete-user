@@ -12,19 +12,19 @@ function enter_login() {
 }
 
 function check_continue() {
-  echo; echo "do you want to delete user on $1?"; echo
+  echo "\n do you want to delete user on $1? \n"
   read -r -p "Are You Sure? [Y/n] " input
 
   case $input in
     [yY][eE][sS]|[yY])
-    echo; echo "====start delete user===="; echo
+    echo "\n ==== start delete user ==== \n"
     ;;*)
-    echo; echo "====stop===="; echo
+    echo "\n ==== stop ==== \n"
     exit;;
   esac
 }
 
 function delete_user(){
-  echo; echo "====delete $2 user===="; echo
+  echo "\n ==== delete $2 user ==== \n"
   ssh $1 "cd $2/current && RAILS_ENV=$3 /usr/local/rbenv/shims/bundle exec rake 'user:destroy_user_account[$email, $login]'"
 }
