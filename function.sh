@@ -1,7 +1,7 @@
 function confirm_email_format(){
   read -p "Please input email: " email
-  if [ `echo $email |grep "^[a-zA-Z0-9_-]*[+-9]*@[A-Za-z_-]*\.[a-zA-Z_-]*.*$"` ];then
-      echo $email >> result.txt
+  if [ `echo $email | grep "^[A-Za-z0-9_-]*[+-9]*@[A-Za-z_-]*\.[A-Za-z_-]*.[A-Za-z_-]*"` ];then
+    echo $email >> result.txt
   else
     confirm_email_format
   fi
