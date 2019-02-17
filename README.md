@@ -1,4 +1,4 @@
-## 同步刪除各站使用者(T客邦，MF，DIGIPHOTO，AUTOZONE，T17，i)
+## 同步刪除各站使用者
 
 ## Usage
 
